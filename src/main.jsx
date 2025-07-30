@@ -7,6 +7,10 @@ import Home from "./components/Home.jsx";
 import About from "./components/About.jsx";
 import Index from "./components/data/Index.jsx";
 import Product from "./components/data/Product.jsx";
+import Customer from "./components/data/Customer.jsx";
+import Seller from "./components/data/Seller.jsx";
+import DataLayout from "./components/data/DataLayout.jsx";
+import ProductDetail from "./components/data/ProductDetail.jsx";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -14,9 +18,12 @@ createRoot(document.getElementById('root')).render(
           <Routes>
               <Route path={'/'} element={<Home />} />
               <Route path={'/about'} element={<About />} />
-              <Route path={'/data'}>
+              <Route path={'/data'} element={<DataLayout />}>
                   <Route index element={<Index />} />
                   <Route path={'product'} element={<Product />} />
+                  <Route path={'products/:no/:id'} element={<ProductDetail />} />
+                  <Route path={'customer'} element={<Customer />} />
+                  <Route path={'seller'} element={<Seller />} />
               </Route>
           </Routes>
       </BrowserRouter>
