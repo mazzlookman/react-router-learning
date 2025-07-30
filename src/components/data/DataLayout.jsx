@@ -1,7 +1,9 @@
-import {Link, NavLink, Outlet} from "react-router";
+import {Link, NavLink, Outlet, useLocation} from "react-router";
 import "../../data.css";
 
 export default function DataLayout() {
+    const location = useLocation();
+
     return (
         <>
             <div>
@@ -26,6 +28,7 @@ export default function DataLayout() {
             </div>
             <div>
                 <p>Footer Data</p>
+                <p>Location: {location.pathname} {location.search} {location.hash}</p>
             </div>
         </>
     )
