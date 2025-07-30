@@ -11,6 +11,7 @@ import Customer from "./components/data/Customer.jsx";
 import Seller from "./components/data/Seller.jsx";
 import DataLayout from "./components/data/DataLayout.jsx";
 import ProductDetail from "./components/data/ProductDetail.jsx";
+import NotFound from "./components/NotFound.jsx";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -25,6 +26,7 @@ createRoot(document.getElementById('root')).render(
                   <Route path={'customer'} element={<Customer />} />
                   <Route path={'seller'} element={<Seller />} />
               </Route>
+              <Route path={'/*'} element={<NotFound />} />
           </Routes>
       </BrowserRouter>
   </StrictMode>,
